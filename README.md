@@ -18,7 +18,7 @@ The entire code is build from scratch, below are the different TSP Solutions gen
 ### Observations
 
 1. For a given problem, *Simulated Annealing* and *ACO* works way better than the genetic algorithm. <br>
-2. In Simulated Annealing gradually drops cost initially fluctuates a lot in higher region than drops gradually as temprature falls. <br>
+2. In Simulated Annealing cost initially fluctuates a lot in higher region than drops gradually as temprature falls. <br>
 3. In ACO, Drop is faster than in the Simulated annealing. <br>
 4. In ACO only 3 to 6 ants can lead to a good solution in 250 iterations. <br>
-5. As far as time is concerned, ACO is the fasted for the given problem, gives good solution within 5-10 secs 
+5. As far as time is concerned, ACO is the faster for the given problem, gives good solution within 5-10 secs 
