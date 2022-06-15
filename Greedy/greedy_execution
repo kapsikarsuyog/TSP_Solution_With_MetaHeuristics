@@ -1,0 +1,38 @@
+import time
+import copy
+import numpy as np
+import pandas as pd
+from SystemObjects.Nodes import Node
+from greedy_function import greedyFunction
+from greedy_function import GreedySolution
+import matplotlib.pyplot as plt
+import os
+#print(os.getcwd())
+
+startTime = time.time()
+path = "/Users/suyogkapsikar/PycharmProjects/TSP/Data/"
+#path = "Data/"
+Data = pd.read_csv(path+"cordinates.csv")
+#print(Data.iloc[0][2])
+
+bestTour,Cost = GreedySolution(Data)
+print("min cost is "+ str(min(Cost)))# + " When starting with",AllCities[np.argmin(Cost)].index, idx[np.argmin(Cost)])
+endTime = time.time()
+bestCost = min(Cost)
+print(bestCost)
+print("Total time in sec is: "+str(endTime-startTime))
+#plt.plot(Cost)
+#plt.show()
+X = [city.x for city in bestTour]
+Y = [city.y for city in bestTour]
+bestIndex = [city.index for city in bestTour]
+XR = copy.deepcopy(X)
+YR = copy.deepcopy(Y)
+XR.append(bestTour[0].x)
+YR.append(bestTour[0].y)
+plt.scatter(X,Y,s=5)
+for i in range(len(X)):
+    plt.annotate(bestIndex[i], (X[i], Y[i] + 0.2))
+plt.plot(XR,YR)
+plt.show()
+print(bestIndex)
